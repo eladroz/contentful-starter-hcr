@@ -2,7 +2,7 @@
 
 Welcome to your new project created with Stackbit!
 
-Here are a few useful tips & links:
+Here are a few useful tips & links!
 
 ## Set up
 
