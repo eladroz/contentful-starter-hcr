@@ -1,9 +1,24 @@
 
 import { getPage, getAllPageSlugs } from '../api/cf';
 import { getComponent } from '../src/components';
+import * as React from 'react';
 
-const Page = getComponent('Page');
+const Page = (props) => {
+    React.useEffect(() => {
+        const handler = (e) => {
+            console.log(e.detail);
+            //window.location.reload(); // user wants to implement own reload mechanism here
+        };
+        window.addEventListener('stackbitObjectsChanged', handler);
+  
+        return () => {
+          window.removeEventListener('stackbitObjectsChanged', handler);
+        };
+    }, []);
 
+    const ActualPage = getComponent('Page');
+    return <ActualPage {...props} />;
+}
 export default Page;
 
 export async function getStaticPaths() {
