@@ -2,7 +2,7 @@ stackbitVersion: ~0.5.0
 ssgName: nextjs
 nodeVersion: '14'
 cmsName: contentful
-hcrHandled: true
+hcrHandled: false
 import:
   type: contentful
   contentFile: contentful/export.json
